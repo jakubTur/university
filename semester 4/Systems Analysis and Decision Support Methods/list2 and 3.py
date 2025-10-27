@@ -2,31 +2,31 @@
 import numpy as np
 import gurobipy as gp
 
-#task 1 - set coverage problem 2d
+#task 1
 
-def create_matrix(rows, cols):
-    matrix = []
-    for i in range(rows):
-        row = [0 for j in range(cols)]
-        matrix.append(row)
-    return matrix
-c=5
-t=7
-r=8
 model=gp.Model("model")
-distances=create_matrix(t,c)
-circle_x=np.random.randint(0, 100, size=c)
-circle_y=np.random.randint(0, 100, size=c)
-triangle_x=np.random.randint(0, 100, size=t)
-triangle_y=np.random.randint(0, 100, size=t)
-for i in range(t):
-  for j in range(c):
-    dx=circle_x[j]-triangle_x[i]
-    dy=circle_y[j]-triangle_y[i]
-    distances[i][j]=math.sqrt(dx*dx + dy*dy)
-matrix=model.addMVar(shape=(t,c), vtype=gp.GRB.BINARY, name="x")
-x = model.addVars(t, c, vtype=GRB.BINARY, name="x")
-for i in range(t):
-    model.addConstr(gp.quicksum(x[i, j] for j in range(c) if distances[i][j] <= r) >= 1, name=f"cover_triangle_{i}")
+m=1
+n=3
+C=11
+matrix=model.addMVar(shape=(m, n), vtype=gp.GRB.BINARY, name="x")
+processingTimes = np.random.randint(0, 10, size=n)
+for j in range(m):
+  model.addConstr(gp.quicksum(matrix[j, i] for i in range(n))==1, name="constraint")
+c=model.addVar(C, vtype=gp.GRB.CONTINUOUS, name="c")
+for j in range(m):
+  model.addConstr(gp.quicksum(matrix[j, i]*processingTimes[i] for i in range(n))<=c, name="constraint2")
+model.setObjective(gp.quicksum(matrix[j, i] * processingTimes[i] for j in range(m) for i in range(n)), gp.GRB.MINIMIZE)
+model.optimize()
 
+#task 2
+p=3
+tri=4
+cir=10
+model2=gp.Model("model2")
+vector=model2.addMVar(p, vtype=gp.GRB.BINARY, name="x")
+matrixDistances=model2.addMVar(shape=(cir,tri), vtype=gp.GRB.BINARY, name="y")
+model2.addConstr(gp.quicksum(vector[i] for i in range (tri))<=p, name='constraint')
+for j in range(tri):
+  model2.addConstr(gp.quicksum((matrixDistances[j,i]-vector[i]) for i in range(cir))<=0, name="constraint2")
+  model2.addConstr(gp.quicksum((matrixDistances[i,j]==1) for i in range(cir))==1, name="constraint3")
 model.optimize()

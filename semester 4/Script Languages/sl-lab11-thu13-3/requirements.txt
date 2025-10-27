@@ -1,0 +1,7 @@
+numpy
+matplotlib
+requests
+docx
+docx.shared
+docx.enum.text
+PIL

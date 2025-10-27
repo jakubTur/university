@@ -1,0 +1,4 @@
+# Add libraries required by your application
+python-dotenv
+openpyxl
+csv
