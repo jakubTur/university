@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content = "youtube, klocuch, video games">
+    <meta name = "description" content = "this is a page with a form for people who have informatioon about Klocuch">
+    <title>Info form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="list3.html">Main page</a>
+            <a href="list3_second.html">Klocuch's discography</a>
+            <a href="list3_form.html">Form for you to complete</a>
+        </nav>
+        <p>
+            <a href="list3.html">
+            <img src="klocuch_baner.jpg" alt="baner with klocuch" style="vertical-align:middle" id="start"></a>
+        </p>
+    </header>
+    <form method="post" action="http://127.0.0.1:5500/list3_form.html" autocomplete="on">
+        <label for="idName">Name:</label>
+        <input id="idName" name="Name" type="text" size="30" maxlength="50" required autofocus placeholder="John">
+        <label for="idLastName">Last name:</label>
+        <input id="idLastName" name="lastName" type="text" size="30" maxlength="50" required placeholder="Smith">
+        <P>
+            <label for="idMonth">Month of birth:</label>
+            <input list="months" id="idMonth" name="month" placeholder="month">
+            <datalist id="months">
+                <option value="January"></option>
+                <option value="February"></option>
+                <option value="March"></option>
+                <option value="April"></option>
+                <option value="May"></option>
+                <option value="June"></option>
+                <option value="July"></option>
+                <option value="August"></option>
+                <option value="September"></option>
+                <option value="October"></option>
+                <option value="November"></option>
+                <option value="December"></option>
+            </datalist>
+        </P>
+        <p>
+            <label for="idEmail">E-mail:</label>
+            <input type="email" id="idEmail" name="Email" size="30" maxlength="50" autocomplete="on" required placeholder="example@ex.com">
+            <label for="idTel">Telephone number:</label>
+            <input type="tel" id="idTel" name="tel" size="20" maxlength="12" placeholder="+48111111111" pattern="^\+48[0-9]{9}$">
+        </p>
+        <p>
+            <label for="idDate">Since when have you been a fan?</label>
+            <input type="date" id="idDate" name="date" max="2025-10-27"><br>
+        </p>
+        <p>
+            <label for="idLikability">How much do you like Klocuch?</label>
+            <input type="range" id="idLikability" name="slider" min="0" max="10">
+        </p>
+        <p>
+            <label for="idColor">Select your favourite color</label>
+            <input type="color" id="idColor" value="#FFFFFF">
+        </p>
+        <p>
+            <label>Select your education level:</label>
+            <label><input name="education" type="radio" value="hs">I finished high school</label>
+            <label><input name="education" type="radio" value="bc">I have a bachelor's degree</label>
+            <label><input name="education" type="radio" value="bs">I have a master's degree</label>
+        </p>
+        <p>
+            <label>Pick which of these languages you know:</label>
+            <label><input name="language" type="checkbox" value="pl">Polish</label>
+            <label><input name="language" type="checkbox" value="en">English</label>
+            <label><input name="language" type="checkbox" value="de">German</label>
+        </p>
+        <p>
+            <label for="idSite">Please provide a link to your website / social media profile where we can reach you:</label>
+        </p>
+        <p>
+            <input id="idSite" name="site" type="text" size="80" maxlength="120" placeholder="www.example.com">
+        </p>
+        <p>
+            <input type="submit" value="Submit form">
+            <input type="reset" value="Clear form">
+        </p>
+    </form>
+    <footer>
+        &copy;Jakub Turkowski 2025
+    </footer>
+</body>

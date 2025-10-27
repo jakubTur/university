@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content = "youtube, klocuch, video games">
+    <meta name = "description" content = "this is a page with a form for people who have informatioon about Klocuch">
+    <title>Info form</title>
+</head>
+<body>
+    <p>
+        <a href="list2.html">
+        <img src="klocuch_baner.jpg" alt="baner with klocuch" style="vertical-align:middle" id="start"></a>
+    </p>
+    <form method="post" action="http://127.0.0.1:5500/list2_form.html">
+    <label for="idName">Name:</label>
+    <input id="idName" name="Name" type="text" size="30" maxlength="50">
+    <label for="idEmail">E-mail:</label>
+    <input id="idEmail" name="Email" type="text" size="30" maxlength="50">
+    <p>
+        <label>Pick the ones which describe you best:</label>
+        <label><input name="relation" type="radio" value="friend">I know him in real life</label>
+        <label><input name="relation" type="radio" value="coworker">I worked with / for him</label>
+        <label><input name="relation" type="radio" value="stranger">I never interacted with him</label>
+    </p>
+    <p>
+        <label>Pick which of his associates you know:</label>
+        <label><input name="associates" type="checkbox" value="rock">Remigiusz Maciaszek</label>
+        <label><input name="associates" type="checkbox" value="borys">Borys Nieśpielak</label>
+        <label><input name="associates" type="checkbox" value="nrgeek">Krzysztof Micielski</label>
+    </p>
+    <p>
+        <label for="IDinfo">Please write down the information you have:</label>
+    </p>
+    <p>
+        <textarea id="IDinfo" name="info" maxlength="200" rows="4" cols="60"></textarea>
+    </p>
+    <p>
+        <label>How much do you love Klocuch?
+            <select name="likability">
+                <option value="5">Love him</option>
+                <option value="4">Like him</option>
+                <option value="3">Indifferent</option>
+                <option value="2">Dislike him</option>
+                <option value="1">Hate him</option>
+            </select>
+        </label>
+    </p>
+    
+    <p>
+        <input type="submit" value="Submit form">
+        <input type="reset" value="Clear form">
+    </p>
+    </form>
+</body>
