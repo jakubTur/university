@@ -1,17 +1,16 @@
 This repository includes (almost) all of my coding-related University coursework. The subjects include:
 Semester 1:
-    - Structural and Object Oriented Programming - java
+    - Structural and Object Oriented Programming - Java
 Semester 2:
-    - Data Structures and Algorithms - java
-    - Operating Systems - python
+    - Data Structures and Algorithms - Java
+    - Operating Systems - Python
     - Computer Architecture - MIPS assembly
 Semester 3:
-    - Programming Paradigms - scala (and some java)
-    - Effective Programming Techniques (C++)
+    - Programming Paradigms - Scala (and some Java)
+    - Effective Programming Techniques - C++
 Semester 4:
-    - Script Languages (python)
-    - Systems Analysis and Decision Support Methods (python)
+    - Script Languages - Python
+    - Systems Analysis and Decision Support Methods - Python with Gurobi Optimizer
 Semester 5 (ongoing):
-    - Web Systems Programming - HTML, CSS, JavaScript, React
-    - Introduction to IoT - C
-    - Mobile Applications for IOS - swift
+    - Web Systems Programming - HTML, CSS, JavaScript
+    - Introduction to IoT - C++ for Arduino board, Python for Raspberry Pi
